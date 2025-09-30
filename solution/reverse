@@ -1,0 +1,10 @@
+#!/bin/bash
+
+l=()
+while read -r line; do
+    l+=("$line")
+done
+
+for ((i=${#l[@]}-1; i>=0; i--)); do
+    echo "${l[i]}"
+done
