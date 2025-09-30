@@ -1,13 +1,6 @@
-#!/bin/bash
-
-set -e
-if [[ "$#" -ne 1 ]]; then
-    echo "usage: $0 <archive>"
-    exit 1
+#!/usr/bin/env bash
+if ! [ -d "$1.unpacked" ]; then
+	mkdir "$1.unpacked"
 fi
-
-archive="$1"
-dir="$archive.unpacked"
-
-mkdir -p "$dir"
-tar -xf "$archive" -C "$dir"
+s="$1.unpacked"
+tar -xf "$1" -C "$s"
